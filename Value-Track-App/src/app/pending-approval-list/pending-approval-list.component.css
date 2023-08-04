@@ -1,0 +1,50 @@
+.header{
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(232,239,226,.7);
+}
+
+.header h4{
+    margin-bottom: 0;
+}
+
+.task-table{
+    margin-bottom: 0;
+    margin-top: 2rem;
+    background-color: rgba(232,239,226,.7);
+}
+
+th, td{
+    text-align: center;
+}
+
+.initiative-id{
+    width: 14%;
+}
+.initiative-name{
+    width: 50%;
+}
+.status{
+    width: 11%
+}
+.action{
+    width: 25%;
+}
+
+.btn:disabled{
+    pointer-events: all;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.pending{
+    color: #8a8a00;
+}
+.approved{
+    color: #198754;
+}
+.rejected{
+    color: #dc3545;
+}

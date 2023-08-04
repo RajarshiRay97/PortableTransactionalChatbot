@@ -1,0 +1,26 @@
+{
+    "QA": {
+        "Hi": [
+            "Hello"
+        ],
+        "Who are you": [
+            "I am Eva"
+        ],
+        "role": [
+            "I am here to guide users regarding property related queries"
+        ],
+        "under BHK": [
+            "fetch properties under target BHK"
+        ],
+        "above BHK": [
+            "fetch properties above target BHK"
+        ],
+        "of BHK": [
+            "fetch properties of target BHK"
+        ],
+        "BHK": [
+            "fetch properties of target BHK"
+        ]
+    },
+    "Initial-Chatbot-buttons": []
+}

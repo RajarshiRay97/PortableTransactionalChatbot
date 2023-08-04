@@ -1,0 +1,106 @@
+.card-title {
+  background-color: #006a4d;
+  color: white;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.card-body-bg {
+  background-color: #e6f1e7;
+}
+
+.two-inp{
+  display: flex;
+  justify-content: space-between;
+}
+
+.inpBox {
+  margin: 15px 0;
+}
+
+.mb-custom{
+  margin-bottom: 1.8rem;
+}
+
+.btn-margin-right{
+  margin-right: 1rem;
+}
+.btn-margin-top{
+  margin-top: 0.7rem;
+}
+
+.error-block {
+  color: red;
+  font-size: 0.85rem;
+  float: right;
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+.ng-invalid.ng-touched {
+  border-color: red;
+}
+.ng-valid.ng-touched {
+  border-color: green;
+}
+
+.btn-group>label[ng-reflect-btn-radio]{
+  border-radius: 44px;
+  padding: 0 15px;
+  line-height: 30px;
+}
+
+.btn:disabled{
+  pointer-events: all;
+  cursor: not-allowed;
+}
+
+.radio-btns{
+  display: flex;
+  align-items: center;
+}
+
+.div-btn{
+  display: flex;
+  align-items: center;
+}
+
+.btn-grp-3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pos-relative{
+  position: relative;
+}
+.radio-button-error {
+  right: 8px;
+  position: absolute;
+}
+
+.photo-control {
+  min-height: 300px;
+  vertical-align: middle;
+  text-align: center;
+  border: 1px dashed green;
+  margin: 12px 5px 5px 5px;
+}
+
+/* for datepicker */
+.theme-green .bs-datepicker-head {
+  background-color: #006a4d;
+}
+.theme-green .bs-datepicker-body table td.week span {
+  color: #006a4d;
+}
+.theme-green .bs-datepicker-body table td span.selected{
+  background-color: #006a4d;
+}

@@ -1,0 +1,62 @@
+.client-card{
+    width: 227.854px;
+    height: 135px;
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 12px;
+    margin-right: 8.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.color-bg{
+    background: rgba(232,239,226,.7);
+}
+.default-bg{
+    cursor: pointer;
+    background: rgba(0,0,0,.3);
+}
+
+.client-name{
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0;
+    display: block;
+    font-size: 21px;
+    line-height: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+    height: 30px;
+    max-height: 35px;
+}
+
+.client-name-green{
+    color: #003F2D !important;
+}
+.client-name-white{
+    color: white !important;
+}
+
+.client-navigation{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation-item{
+    margin-right: 15px;
+}
+
+.navigation-anchor{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icon-green{
+    color: #69BE28;
+}

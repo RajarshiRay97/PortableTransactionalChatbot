@@ -1,0 +1,13 @@
+<div class="container-fluid main-container">
+    <div class="sub-container">
+        <div class="input-div">
+            <input type="text" class="form-control client-input" placeholder="Type here to find a client...">
+        </div>
+        <div class="client-container">
+            <div class="client-card-container">
+                <app-client-card [clientName]="defaultValue"></app-client-card>
+                <app-client-card *ngFor="let client of clientsArr" [clientName]="client.name"></app-client-card>
+            </div>
+        </div>
+    </div>
+</div>

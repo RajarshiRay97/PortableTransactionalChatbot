@@ -1,0 +1,52 @@
+.custom-tbl{
+    margin: 2rem 0;
+    font-size: 14px;
+}
+
+td,th {
+    border: 1px solid #ffffff;
+}
+
+#no-record-row{
+    --bs-table-accent-bg: none;
+}
+
+.no-record{
+    padding: 1rem 0;
+    text-align: center;
+    pointer-events: none;
+    border: none;
+    font-style: italic;
+    color: gray;
+}
+
+.slno-header{
+    width: 10%;
+}
+.keyword-header{
+    width: 35%;
+}
+.answer-header{
+    width: 47%;
+}
+.action-header{
+    width: 8%;
+    text-align: center;
+}
+
+.justify-text{
+    text-align: justify;
+    white-space: pre-wrap;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-custom{
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 0.3rem 0.5rem;
+}

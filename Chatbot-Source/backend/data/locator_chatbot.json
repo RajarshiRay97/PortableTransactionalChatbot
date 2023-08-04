@@ -1,0 +1,68 @@
+{
+    "QA":{
+        "Hi": [
+            "Hello"
+        ],
+        "Who are you": [
+            "I am Eva"
+        ],
+        "Locator Issue": [
+            "Please let me know about the issue"
+        ],
+        "Not Able to run application locally": [
+            "I would suggest please do npm i and check if node module is successfully insatalled"
+        ],
+        "Api issue": [
+            "Please let me know what type of issue you are facing in API?"
+        ],
+        "Api Returning Error Code 400 Bad Request": [
+            "Please send a valid request body or parameter",
+            "Please check if there is any malformed request syntax, or invalid request message framing, or deceptive request routing"
+        ],
+        "Api Returning Error Code 401 Unauthorized": [
+            "Might be your cookies and cache is expired, please re-login with valid credential"
+        ],
+        "Api Returning Error Code 403 Forbidden": [
+            "Please check your permission for the requested resource",
+            "I would suggest please check your roles"
+        ],
+        "Api Returning Error Code 412 Precondition Failed": [
+            "It might be server does not meet preconditions that you are puting in its request header fields. please check it and re-try."
+        ],
+        "Api Returning 500 Internal Server Error": [
+            "Please refresh the page. This might seem obvious, but if it's a temporary loading issue, you might find success if you refresh the page",
+            "Please come back after few minutes",
+            "please delete your browser's cookies and try again"
+        ],
+        "Not Able to call excel upload functionality": [
+            "Please check the package.json file for excel plugin and install it again",
+            "I would suggest please check configuration in plugin folder index.js file and support folder command.ts file"
+        ],
+        "Not Able to compare image": [
+            "Please check the package.json file for image plugin and install it again",
+            "I would suggest please check configuration in plugin folder index.js file and support folder command.ts file"
+        ],
+        "dropdown latest functionality is not avaialable": [
+            "I would suggest please update ng material with latest"
+        ],
+        "database issue": [
+            "Please check the connection string",
+            "Please check user ID, password and database name",
+            "Please connect with DBA"
+        ],
+        "Connectivity issue": [
+            "Please check the credentials",
+            "Please check if there is any firewall block"
+        ],
+        "database connection issue": [
+            "Please check the connection string",
+            "Please check user ID, password and database name",
+            "Please connect with DBA"
+        ],
+        "Application access issue": [
+            "Please refresh the bowser and clear cache!",
+            "Please check access rights. If everything fine suggest user to create SNOW ticket and assign it to MS L2 team. If not added to application, update user."
+        ]
+    },
+    "Initial-Chatbot-buttons": []
+}

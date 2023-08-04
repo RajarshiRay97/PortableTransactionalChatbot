@@ -1,0 +1,21 @@
+.nav-logo{
+  margin: 0 40px 0 0;
+}
+
+.custom-nav-class {
+  height: 5rem;
+  background-color: #012A2D;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.navbar-dark {
+  --bs-navbar-color: rgba(255, 255, 255, 0.75);
+  --bs-navbar-hover-color: rgba(255, 255, 255, 0.90);
+}
+
+.a-pointer{
+  cursor: pointer;
+}

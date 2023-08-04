@@ -1,0 +1,65 @@
+<div class="row mb-4">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header card-title">
+        Register
+      </div>
+      <div class="card-body card-body-bg">
+        <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+          <div class="form-group col-12 inpBox">
+            <label for="name" class="form-label">User Name</label>
+            <input type="text" id="name" class="form-control" formControlName="userName">
+            <span class="error-block" *ngIf="!userName.valid && (userName.dirty || userName.touched || formSubmitted)">
+              <span *ngIf="userName.errors?.['required']">User Name is Required*</span>
+            </span>
+          </div>
+
+          <div class="col-12 two-inp inpBox">
+            <div class="form-group col-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" id="email" class="form-control" formControlName="email">
+              <span style="margin: 0;" class="error-block" *ngIf="!email.valid && (email.dirty || email.touched || formSubmitted)">
+                <span *ngIf="email.errors?.['required']">Email is Required*</span>
+                <span *ngIf="email.errors?.['email']">Invalid Email Id</span>
+              </span>
+            </div>
+
+            <div class="form-group col-5">
+              <label for="mobile" class="form-label">Mobile No.</label>
+              <input type="text" id="mobile" class="form-control" formControlName="mobile">
+              <span style="margin: 0;" class="error-block" *ngIf="!mobile.valid && (mobile.dirty || mobile.touched || formSubmitted)">
+                <span *ngIf="mobile.errors?.['required']">Mobile No. is Required*</span>
+                <span *ngIf="mobile.errors?.['pattern']">Invalid Mobile No.</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group col-12 inpBox">
+            <label for="passwrod" class="form-label">Password</label>
+            <input type="password" id="passwrod" class="form-control" formControlName="password">
+            <span class="error-block" *ngIf="!password.valid && (password.dirty || password.touched || formSubmitted)">
+              <span *ngIf="password.errors?.['required']">Password is Required*</span>
+              <span *ngIf="password.errors?.['pattern']">Password should contain minimum 8 characters, at least one uppercase letter, one lowercase letter, one number and one special character</span>
+            </span>
+          </div>
+
+          <div class="form-group col-12 inpBox">
+            <label for="cpassword" class="form-label">Confirm Password</label>
+            <input type="password" id="cpassword" class="form-control" formControlName="confirmPassword">
+            <span class="error-block" *ngIf="!confirmPassword.valid && (confirmPassword.dirty || confirmPassword.touched || formSubmitted)">
+              <span *ngIf="confirmPassword.errors?.['required']">Please confirm password</span>
+            </span>
+            <span class="error-block" *ngIf="registrationForm.errors?.['notMatched'] && confirmPassword.valid">
+              Password not matched
+            </span>
+          </div>
+
+          <div class="form-group col-12 inpBox">
+            <button type="submit" class="btn btn-success btn-margin-right btn-margin-top">Register</button>
+            <button type="reset" class="btn btn-secondary btn-margin-right btn-margin-top">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

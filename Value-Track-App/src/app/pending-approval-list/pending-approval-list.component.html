@@ -1,0 +1,36 @@
+<div class="container-fluid main-container">
+    <div class="sub-container">
+        <div class="header">
+            <h4>
+                List of Pending Approvals
+            </h4>
+            <button type="button" class="btn btn-success" (click)="navigateToHome()">
+                Home <fa-icon [icon]="faHouse" aria-hidden="true"></fa-icon>
+            </button>
+        </div>
+
+        <table class="table table-striped table-hover task-table">
+            <thead>
+              <tr>
+                <th scope="col" class="initiative-id">Initiative ID</th>
+                <th scope="col" class="initiative-name">Initiative Name</th>
+                <th scope="col" class="status">Status</th>
+                <th scope="col" class="action">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let initiative of initiatives">
+                    <tr>
+                      <th scope="row">{{initiative.id}}</th>
+                      <td>{{initiative.name}}</td>
+                      <td [ngClass]="{'pending': initiative.initiativeStatus === 'Pending', 'approved': initiative.initiativeStatus === 'Approved', 'rejected': initiative.initiativeStatus === 'Rejected'}">{{initiative.initiativeStatus}}</td>
+                      <td>
+                          <button type="button" [disabled]="initiative.initiativeStatus === 'Approved'" class="btn btn-outline-success btn-sm me-2" (click)="onApproveClick(initiative.id)">Approve</button>
+                          <button type="button" [disabled]="initiative.initiativeStatus === 'Rejected'" class="btn btn-outline-danger btn-sm" (click)="onRejectClick(initiative.id)">Reject</button>
+                      </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+          </table>
+    </div>
+</div>

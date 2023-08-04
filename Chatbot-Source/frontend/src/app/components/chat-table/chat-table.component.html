@@ -1,0 +1,56 @@
+<table class="table table-success table-striped table-hover custom-tbl">
+    <thead>
+      <tr>
+        <th scope="col" class="slno-header">Sl. No.</th>
+        <th scope="col" class="keyword-header">Keyword</th>
+        <th scope="col" class="answer-header">Answer</th>
+        <th scope="col" class="action-header">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!QAArray.length" id="no-record-row">
+        <td colspan="4" class="no-record">--- No records are available to show ---</td>
+      </tr>
+      <ng-container *ngFor="let item of QAArray">
+        <tr>
+          <th scope="row" [attr.rowspan]="item.rowCount">{{item.id}}</th>
+          <td class="justify-text" [attr.rowspan]="item.rowCount">{{item.keyword}}</td>
+          <td class="justify-text">{{item.answerArr[0]}}</td>
+          <td [attr.rowspan]="item.rowCount">
+            <div class="btn-div">
+              <button type="button" class="btn btn-outline-success btn-custom">
+                <fa-icon [icon]="faPen"></fa-icon>
+              </button>
+              <button type="button" class="btn btn-outline-danger btn-custom" (click)="confirmDelete(item.keyword)">
+                <fa-icon [icon]="faTrash"></fa-icon>
+              </button>
+            </div>
+          </td>
+        </tr>
+        <ng-container *ngFor="let ans of item.answerArr; let i= index;">
+          <tr *ngIf="i!=0">
+            <td class="justify-text">{{ans}}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+
+<!-- Modal window for delete -->
+<div class="modal" tabindex="-1" id="delete-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Are You Sure?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="onClose()"></button>
+      </div>
+      <div class="modal-body">
+        <p id="delete-modal-text"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onClose()">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

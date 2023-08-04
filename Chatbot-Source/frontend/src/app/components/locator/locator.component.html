@@ -1,0 +1,5 @@
+<div class="main-container">
+    <app-product-name [productNameHeader]="productName"></app-product-name>
+    <app-chat-qa-form (passDataFromQAFormToRightPanelEvent)="passDataFromQAFormToLocator($event)" [appNameInUrl]="appName"></app-chat-qa-form>
+    <app-chat-table [QAArray]="chatbotQAArray" [appNameInUrl]="appName"></app-chat-table>
+</div>

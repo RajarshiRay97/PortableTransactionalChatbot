@@ -1,0 +1,61 @@
+{
+    "QA": {
+        "Access Issue": [
+            "What type of access issue you are facing?"
+        ],
+        "Application access issue": [
+            "Refresh the bowser and clear cache!",
+            "Check access and update. If everything fine suggest user to create SNOW ticket and assign it to MS L2 team. If not added to application, update user."
+        ],
+        "Access Privileges": [
+            "fetch access privileges"
+        ],
+        "Pending approvals": [
+            "fetch pending approvals"
+        ],
+        "Access Request": [
+            "Can you please help me with the name of the client you want to access?"
+        ],
+        "Hi": [
+            "Hello"
+        ],
+        "Who are you": [
+            "I am ValueTrack Intelligent chatbot. You can call me VIC."
+        ],
+        "Exit Current Query Tab": [
+            "You are successfully exited from current query tab."
+        ],
+        "Client Access Issue": [
+            "Can you please help me with the name of the client you want to access?"
+        ]
+    },
+    "Initial-Chatbot-buttons": [
+        {
+            "btnName": "Facing Access Issue",
+            "clicked": false,
+            "subBtns": [
+                {
+                    "name": "Application Access Issue"
+                },
+                {
+                    "name": "Client Access Issue"
+                }
+            ]
+        },
+        {
+            "btnName": "My access privileges",
+            "clicked": false,
+            "subBtns": []
+        },
+        {
+            "btnName": "My pending approvals",
+            "clicked": false,
+            "subBtns": []
+        },
+        {
+            "btnName": "Access Request",
+            "clicked": false,
+            "subBtns": []
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<div class="row mb-4">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header card-title">
+        Login
+      </div>
+      <div class="card-body card-body-bg">
+        <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+          <div class="form-group col-12 inpBox">
+            <label for="userName" class="form-label">User Name</label>
+            <input type="text" id="userName" name="userName" #userName="ngModel" class="form-control" ngModel required>
+            <span *ngIf="!userName.valid && (userName.dirty || userName.touched)" class="error-block">
+              <span *ngIf="userName.errors?.['required']">Name is Required*</span>
+            </span>
+          </div>
+
+          <div class="form-group col-12 inpBox">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" name="password" class="form-control" #password="ngModel" ngModel required>
+            <span *ngIf="!password.valid && (password.dirty || password.touched)" class="error-block">
+              <span *ngIf="password.errors?.['required']">Password is Required*</span>
+            </span>
+          </div>
+
+          <div class="form-group col-12 inpBox">
+            <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success btn-margin-right btn-margin-top">Login</button>
+            <button type="reset" class="btn btn-secondary btn-margin-right btn-margin-top">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

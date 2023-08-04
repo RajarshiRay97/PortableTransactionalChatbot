@@ -1,0 +1,12 @@
+.main-section {
+    min-height: 86vh;
+    display: flex;
+    justify-content: space-between;
+}
+.left-panel{
+    width: 15%;
+}
+.right-panel{
+    width: 85%;
+    background-color: #ececec;
+}

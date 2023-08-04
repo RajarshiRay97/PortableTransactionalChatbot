@@ -1,0 +1,75 @@
+<div id="floatingChatPopup" class="floating-chat" [ngClass]="{'enter': enterFloatingChat, 'expand': expandFloatingChat}" (click)="openChatEvent?openChat():null">
+    <img id="chatIcon" src="assets/Images/chatbot-logo.png" alt="">
+    <div class="chat" [ngClass]="{'enter': enterChat}">
+        <div class="header">
+            <div class="title">
+                <img id="chat-header-logo" src="assets/Images/chatbot-logo.png" alt="">
+                <div class="bot-name-status">
+                    <div class="bot-name">Ask <span class="real-name">EVA</span></div>
+                    <div class="bot-status">Online</div>
+                </div>
+            </div>
+            <button (click)="closeChat()">
+                <fa-icon [icon]="faTimes" aria-hidden="true" id="close-icon"></fa-icon>
+            </button>
+                         
+        </div>
+        <div class="btn-header" *ngIf="initialChatButtons?.length">
+            <button class="custom-header-btn btn-sm helped-btn" *ngFor="let item of initialChatButtons" [ngClass]="{'active-btn': item.clicked}" (click)="startConversation(item.btnName, item.clicked)">{{item.btnName}}</button>
+        </div>
+        <ul class="messages">
+            <div *ngFor="let message of messages" [ngClass]="{'message-div-other': message.author === 'bot', 'message-div-self': message.author === 'user'}">
+                <li class="message-li" [ngClass]="{'other': message.author === 'bot', 'self': message.author === 'user'}">
+                    <ng-container *ngIf="message.author === 'bot'; then botMsg else userMsg"></ng-container>
+                    <ng-template #botMsg>
+                        <ng-container *ngIf="message.typing; then typingMsg else answerMsg"></ng-container>
+                        <ng-template #typingMsg>
+                            <div class="typing">
+                                <div class='circle'></div>
+                                <div class='circle'></div>
+                                <div class='circle'></div>
+                            </div>
+                        </ng-template>
+                        <ng-template #answerMsg>
+                            <div [innerHtml]="message.content[message.alternateAnsIndex]"></div>
+                        </ng-template>
+                    </ng-template>
+                    <ng-template #userMsg>
+                        <div [innerHtml]="message.content[0]"></div>
+                    </ng-template>
+                    <div *ngIf="message.author === 'bot' && (message.content[0].includes('Please rephrase or ask a different question') || message.content[0].includes('connect with our support or admin team')) && !message.typing">
+                        <div class="rephrase-block" *ngIf="message.content[0].includes('Please rephrase or ask a different question')">
+                            <button class="custom-btn btn-sm helped-btn btn-width-75" *ngFor="let item of initialChatButtons" (click)="startConversation(item.btnName, item.clicked)">{{item.btnName}}</button>
+                        </div>
+                        <div class="help-line-div">
+                            <div class="mt-2 mb-1 text-center">Support Help Line: <span class="help-line-color">realEstateManage.support@cbre.com</span></div>
+                            <div class="text-center">Admin Help Line: <span class="help-line-color">realEstateManage.admin@cbre.com</span></div>
+                        </div>
+                    </div>
+                </li>
+                <div class="user-shorcut-button-block" *ngIf="message.author === 'bot' && subBtns.length !== 0 && !message.typing && message.showBtnDiv">
+                    <button class="custom-btn btn-sm helped-btn" *ngFor="let subBtn of subBtns" (click)="onBtnConversation(subBtn.name)">{{subBtn.name}}</button>
+                </div>
+                <div class="user-shorcut-button-block" *ngIf="message.author === 'bot' && message.content.length !== 1 && !message.typing && message.showBtnDiv">
+                    <button class="custom-btn btn-sm helped-btn" #btnStop (click)="stopConversationForParticularQuery(btnStop.innerText)">Thanks, that helped!</button>
+                    <button class="custom-btn btn-sm not-resolved-btn" #btnContinue (click)="continueConversation(btnContinue.innerText)">Problem not resolved</button>
+                </div>
+            </div>
+        </ul>
+        <div class="footer">
+            <span class="empty-alert">Please type a message to continue</span>
+            <ul class="dropdown-menu suggested-keywords" *ngIf="suggestedKeywordsArr.length !== 0">
+                <li class="dropdown-item" *ngFor="let item of suggestedKeywordsArr" (click)="getSuggestionKeywordAns(item.keyword)">
+                    <div>{{item.keyword}}</div>
+                    <fa-icon [icon]="faArrowRightLong" class="go-icon"></fa-icon>
+                </li>
+            </ul>
+            <div #userInput class="text-box" (keydown.enter)="preventNewLine($event)" (keyup.enter)="sendMessage($event)" (input)="generateKewordSuggetions(userInput.innerText)" contenteditable="true" disabled="true" data-placeholder="Type here...">
+            </div>
+            <button id="sendMessage" (click)="sendMessage($event)">
+                <fa-icon [icon]="faPaperPlane" aria-hidden="true"></fa-icon>
+            </button>
+        </div>
+    </div>
+</div>
+

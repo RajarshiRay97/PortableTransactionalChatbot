@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: Calibre!important;
+}
+
+.container-fluid{
+    padding: 0 9rem;
+}
+
+.main-container{
+    position: relative;
+    padding-top: 1rem;
+}
+
+.main-container::before{
+    background: url('src/assets/Images/value-track-bg.jpg') no-repeat center;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.sub-container{
+    padding: 20px;
+    padding-right: 10.5px;
+}

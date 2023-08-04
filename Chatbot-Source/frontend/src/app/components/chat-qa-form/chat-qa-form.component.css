@@ -1,0 +1,40 @@
+.inp-with-label{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+label{
+    margin-right: 2rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.inp {
+    padding: 0.3rem;
+    font-size: 1rem;
+}
+
+input{
+    width: 55%
+}
+
+textarea{
+    margin-left: 1.2rem;
+    width: 55%;
+    height: 8rem;
+}
+
+.qa-form-button{
+    display: flex;
+    padding: 0 10rem;
+}
+
+.btn {
+    margin: 0 5rem;
+}
+
+.mat-mdc-raised-button[disabled][disabled] {
+    --mdc-protected-button-disabled-container-color: rgb(143 177 234 / 83%);
+    --mdc-protected-button-disabled-label-text-color: rgb(0 0 0 / 92%);
+}

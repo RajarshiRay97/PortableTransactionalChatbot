@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-sm-4" *ngFor="let Property of Properties">
+    <app-property-card [PropertyObj]="Property" [showIcons]="true" [showPreview]="true"></app-property-card>
+  </div>
+</div>

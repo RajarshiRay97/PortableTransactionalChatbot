@@ -1,0 +1,35 @@
+<div class="client-card" [ngClass]="{'color-bg': clientName !== 'Create Client', 'default-bg': clientName === 'Create Client'}">
+    <a class="client-name" [ngClass]="{'client-name-green': clientName !== 'Create Client', 'client-name-white': clientName === 'Create Client'}">{{clientName}}</a>
+    <ul class="client-navigation" *ngIf="clientName !== 'Create Client'">
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faMagnifyingGlass" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faGear" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faUsers" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faFileLines" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faListOl" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+        <li class="navigation-item">
+            <a class="navigation-anchor">
+                <fa-icon [icon]="faCircleDollarToSlot" aria-hidden="true" class="icon-green"></fa-icon>
+            </a>
+        </li>
+    </ul>
+</div>

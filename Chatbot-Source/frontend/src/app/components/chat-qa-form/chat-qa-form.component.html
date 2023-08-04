@@ -1,0 +1,16 @@
+<div class="qa-form-div">
+    <form [formGroup]="chatQAForm" (ngSubmit)="onSubmit()">
+        <div class="inp-with-label">
+            <label for="keyword" class="form-label">Keywords</label>
+            <input type="text" id="keyword" class="form-control inp" placeholder="Support multiple Keywords seperated by Semicolon" formControlName="keyword">
+        </div>
+        <div class="inp-with-label">
+            <label for="answer" class="form-label">Answer</label>
+            <textarea id="answer" class="form-control inp" placeholder="Define Bot answer of the keyword/keywords" formControlName="answer"></textarea>
+        </div>
+        <div class="qa-form-button">
+            <button mat-raised-button [disabled]="!chatQAForm.valid" type="submit" color="primary" class="btn">Save</button>
+            <button mat-raised-button type="reset" class="btn">Clear</button>
+        </div>
+    </form>
+</div>
